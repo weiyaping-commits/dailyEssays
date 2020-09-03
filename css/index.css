@@ -1,0 +1,65 @@
+/*公共样式*/
+html,body{
+    margin:0px;
+    padding:0px;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.container_16{
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px   ;
+}
+.logo {
+    position: absolute;
+    float: left;
+    left:300px;
+    top:5px;
+}
+/*首部*/
+header nav{
+    position: absolute;
+    right:100px;
+    top:10px;
+}
+header nav ul li{
+    float: left;
+    padding-left: 15px;
+
+}
+header nav ul li a{
+    float: left;
+    color:black;
+    width: 100px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+}
+header nav ul li a.hover,header nav ul li a.current{
+    background: url(../image/1.png) 0 0 repeat-x;
+    border-radius: 5px;
+
+}
+
+/*底部设计*/
+footer p{
+    position: absolute;
+    left:300px;
+    bottom: 10px;
+}
+footer nav{
+    position: absolute;
+    right: 100px;
+    bottom: 10px;
+}
+footer nav ul li {
+    float: left;
+    width: 100px;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+}

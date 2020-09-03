@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var a=[1,2,3,4,5];
+    // a.splice(1,3,5,2,1);//从第一个元素开始删除三个元素，剩下【1，5】；然后从第一个元素的位置，插入5，2，1，变成【1，5，2，1 ，5】
+    // console.log(a);
+
+    // function isMerge(s, part1, part2) {
+    //     var  str = part1 + part2;
+    //     if(s.length != str.length){
+    //         return false;
+    //     }
+    //     var arrayS = s.split("");
+    //     var arrayStr = str.split("");
+    //     for(var i=0;i<s.length;i++){
+    //        if(str.indexOf(s[i]) != -1){
+    //            return true;
+    //        }
+    //     }
+    //     return false;
+    // }
+    // console.log(isMerge("codewars", "cdw", "oears"))
+
+    Array.prototype.quzhong = function (arr) {
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i] == arr[j]){
+                    arr.splice(i,1);
+                    j--;
+                    i--;
+                }
+            }
+
+        }
+        return arr;
+    }
+    console.log(quchong([1,2,4,7,8,4,5,9,6,7,8,8]));
+</script>
+</body>
+</html>
