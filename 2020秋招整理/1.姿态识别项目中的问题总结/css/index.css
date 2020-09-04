@@ -1,0 +1,37 @@
+.leftImg{
+    width: 450px;
+    height: 320px;
+    float: left;
+    margin: 0 40px;
+}
+.rightImg{
+    width: 450px;
+    height: 320px;
+    float: right;
+    margin: 0 40px;
+}
+.tableDiv{
+    width: 300px;
+    margin-left: 80px;
+}
+th, td {
+    display: block;
+}
+tr {
+    display: block;
+    float: left;
+}
+table {
+    display: block;
+    width: 100px;
+    margin-left: 30px;
+    padding-left: 10px;
+}
+.vi{
+    color: red;
+    font-size: 16px;
+    margin-left: 80px;
+}
+.actionDivBtn > p{
+    margin-left: 46%;
+}

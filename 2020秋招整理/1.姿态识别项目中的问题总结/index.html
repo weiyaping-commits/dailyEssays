@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="左右结构项目，姿态识别研究">
+    <meta name="keywords" content="左右结构项目">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no">
+    <title>姿态识别</title>
+<!--    引入外部样式文件-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/flat-ui.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <link rel="stylesheet" href="css/jquery.nouislider.css">
+    <link rel="stylesheet" href="css/jquery.nouislider.min.css">
+    <!--引入外部脚本文件-->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/html5.js"></script>
+    <script src="js/respond.min.js"></script>
+<!--引入自己写的样式文件-->
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="wrap">
+    <!--左侧菜单栏目块-->
+    <div class="leftMeun" id="leftMeun">
+        <!-- logo部分-->
+        <div id="logoDiv">
+            <p id="logoP"><img id="logo" src="images/logo.png" alt="左右结构项目"><span>隐喻识别</span></p>
+        </div>
+        <!--侧边栏内容-->
+        <div class="meun-item meun-item-active" href="#sour" aria-controls="sour" role="tab" data-toggle="tab"><img src="images/icon_source.png">动作管理评分</div>
+        <div class="meun-item" href="#char" aria-controls="char" role="tab" data-toggle="tab"><img src="images/icon_chara_grey.png">上传文件</div>
+    </div>
+    <!--右侧具体内容栏-->
+    <div id="rightContent">
+        <a class="toggle-btn" id="nimei">
+            <i class="glyphicon glyphicon-align-justify"></i>
+        </a>
+        <div class="tab-content">
+            <!-- 动作管理评分-->
+            <div role="tabpanel" class="tab-pane active" id="sour">
+                <div class="data-div">
+                    <div class="col-xl-12 col-xxl-12 d-flex">
+                        <div class="w-100">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title md-6">被评估动作的展示</h5>
+                                            <img src="img/group1-2.1.png" alt="图片1" class="leftImg" id="image1">
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <img src="img/group1-2.2.png" alt="" class="rightImg" id="image2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <h5 class="card-title md-6">标准动作的展示</h5>
+                                            <img src="img/group1-1.1.png" alt="图片2" class="leftImg" id="image3">
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="tableDiv">
+                                                <table class="table table-bordered">
+                                                    <tr>
+                                                        <td>眼睛</td>
+                                                        <td>鼻子</td>
+                                                        <td>肩部</td>
+                                                        <td>肘部</td>
+                                                        <td>手腕</td>
+                                                        <td>背部</td>
+                                                        <td>颈部</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>133.</td>
+                                                        <td>130.</td>
+                                                        <td>107.</td>
+                                                        <td>169.</td>
+                                                        <td>130.</td>
+                                                        <td>90°</td>
+                                                        <td>137°</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>眼睛</td>
+                                                        <td>鼻子</td>
+                                                        <td>肩部</td>
+                                                        <td>肘部</td>
+                                                        <td>手腕</td>
+                                                        <td>背部</td>
+                                                        <td>颈部</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>130.5430</td>
+                                                        <td>122.5836</td>
+                                                        <td>110.2110</td>
+                                                        <td>130.3278</td>
+                                                        <td>109.6500</td>
+                                                        <td>91°</td>
+                                                        <td>132°</td>
+                                                    </tr>
+                                                </table>
+                                                <div id="vi" class="vi">综合评分90分</div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                <!--下面的切换操作的按钮-->
+                    <div class="actionDivBtn">
+                        <p>
+                            <button  class="btn btn-primary" value="上一张"><<</button>
+                            <button  class="btn btn-primary" value="下一张">>></button>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<!--引入自己添加的脚本文件-->
+<script src="js/index.js"></script>
+
+</body>
+</html>
