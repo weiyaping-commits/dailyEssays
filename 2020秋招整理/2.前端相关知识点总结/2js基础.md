@@ -1,4 +1,6 @@
 # 2. js基础知识点
+---
+# 2.1 JS函数+数组
 ## 1.闭包是什么？闭包的作用？闭包的使用场景？
     函数+环境=闭包；
     闭包的作用是封装数据和暂存数据；
@@ -160,5 +162,106 @@
     Math.max(...[1,2,3,4,5])
     (3)reduce
     [1,2,3,4,5].reduce((index,currentValue)=>{return currentValue = index > currentValue ? index : currentValue})
-    
- 
+---
+# 2.2 面向对象编程
+## 1.new的原理是什么？通过new创建的过程和通过字面量创建过程的区别？
+    new的原理：
+        （1）创建一个新对象；
+        （2）设置this使他指向这个对象；
+        （3）属性和方法被加入到this引用的对象中。并执行构造函数中的方法。
+        （4）如果构造函数中没有返回其他对象，则this指向这个新对象。否则，则指向构造函数返回的对象。
+    通过new创建对象和通过字面量创建对象的区别：
+        （1）通过 字面量 创建的对象，如{}，不会调用Object构造函数，简介且性能好。
+        （2）new Object() 创建对象，实际上是 方法调用。涉及到在proto原型链中遍历该方法，当找到该方法后，会产生方法调用的 堆栈信息；
+            方法调用结束后，还要释放 堆栈。性能不如字面量的方式。
+## 2.js创建对象的几种方式？
+    （1）对象字面量 
+        var obj = {};
+    （2）构造函数
+        var obj = new Object();
+    （3）Object.create()
+        var obj = Object.create(Object.prototype); 
+## 3.如下代码，new 一个函数本质做了什么？
+        function Model(msg){
+            this.msg = msg;
+        }
+        var model = new Model(“hello”);
+        (1)创建类的实例。把一个空对象的proto设置为Model.prototype;
+        (2)初始化实例。函数Model被传入参数并被调用，关键字this设定为该实例。
+        (3)返回实例，赋值给model.
+## 4.JS原型是什么？如何理解JS中的原型链？
+    （1）JS原型：在JavaScript中，每当定义一个对象（函数也是对象）的时候，对象中都会包含一些预定义的属性。
+        其中，每个函数/对象都有一个prototype属性，这个属性指向函数的原型对象。使用原型对象的好处是，所有 实例共享
+        他所包含的属性和方法。
+    （2）原型链：原型链解决的主要是 继承问题。每个对象拥有一个原型对象，通过__proto__(读音dunder proto)指针指向其 
+        原型对象，并从原型对象中继承属性和方法。同时，原型对象也可能拥有原型，这样一层一层的最终指向 null(Object.prototype.__proto__ 指向的就是null).
+        这种关系被称为原型链（prototype chain）.
+        通过原型链，一个对象可以继承其他对象属性和方法。
+![blockchain](images/prototype chain.png)
+## 5.解释原型链中几个常见关键字。
+### 5.1 有如下代码，解释Person、prototype、__proto__、p、constructor之间的关联：
+    function Person(name){
+        this.name  = name;
+    }
+    Person.prototype.sayName = function(){
+        console.log("my name is :"+this.name);
+    }
+    var p = new Person("oli");
+    p.sayName();
+  - Person是对象，通过关键字 new ,实例化一个对象 p;
+  - Person对象通过prototype 指向 Person原型对象;
+  - p 通过__proto__指向 Person原型对象，继承他的属性和方法;
+  - Person原型对象 通过 constructor 指向Person
+### 5.2 有如下代码，代码中并未添加toString方法，这个是从那里来的？画出原型链图进行解释：
+    function Person(){}
+    var p = new Person()
+    p.toString();
+   - （1）去 p 本身去查找，看是否有toString()方法；
+   - （2）没有找到，向上再查找一层，查找p.__proto__（即Person的原型对象中）,看是否有toString()
+   - （3）没有找到继续往上查找，p__proto__.__proto__，直到返回null结束查找。
+### 5.3 以下两种写法有什么区别？
+        //方法一
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+            this.printName = function () {
+                console.log(this.name);
+            }
+        }
+        var p1 = new Person("lili",2);
+        //方法二
+        function Person(name,age) {
+            this.name = name;
+            this.age = age;
+        }
+        Person.prototype.printName = function () {
+            console.log(this.name);
+        }
+        var p2 = new Person('liuliu',3);  
+   - （1）第一种写法，把printName()方法放在构造函数中，在每次创建Perple实例的时候，都会给新对象也增加printName()方法。
+        如果new多个对象的时候，都会重复实例化printName()方法多次，浪费资源空间；
+   - （2）第二种写法，把printName()方法放在Person.prototype中，在每次new Person()的时候，对象中会都拥有属性，也可以嗲用原型上的printName()方法，不管new多少个对象，都会共享这一个
+        printName()方法，不会增加负担。
+## 6.实现继承
+### 6.1原型继承
+    function Person(name,sex){
+        this.name = name;
+        this.sex = sex;
+    }
+    Person.prototype.getName = function () {
+        console.log(this.name);
+    }
+    function Male(name,sex,age) {
+        Person.call(this,name,sex);
+        this.age = age;
+    }
+    Male.prototype = Object.create(Person.prototype);
+    Male.prototype.getAge = function () {
+        console.log(this.age);
+    }
+    var catcher = new Male('lili','man',2);
+    catcher.getName();
+---
+---
+# 2.3 JS提供的对象
+## 1.看到js16了
