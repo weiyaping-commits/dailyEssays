@@ -6,28 +6,12 @@
 </head>
 <body>
 <script>
-   function push1(arr,value) {
-        arr.splice(arr.length,0,value);//从第length-1位开始删除0个元素，插入value
-        return arr;
-   }
-   function pop1(arr) {
-        arr.splice(arr.length-1,1);//从第length-1位开始删除1个元素
-       return arr;
-   }
-   function shift1(arr) {
-       arr.splice(0,1);//从第0位开始删除1个元素
-       return arr;
-   }
-   function unshift1(arr,value) {
-       arr.splice(0,0,value);//从第0位开始删除0个元素，插入value
-       return arr;
-   }
 
-   var arr = [3,4,5];
-   console.log(push1(arr,10));
-   console.log(pop1(arr));
-   console.log(shift1(arr));
-   console.log(unshift1(arr,9));
+
+   ["1",'2','3'].map(val=>{
+       return +val;
+   })
+
 </script>
 </body>
 </html>
