@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贝壳找房笔试</title>
+</head>
+<body>
+<script>
+    function winGame(n,arr) {
+        for(var i=0;i<n;i++){
+            nm_left = arr[i][0];
+            nm_right = arr[i][1];
+            nn_left = arr[i][2];
+            nn_right = arr[i][3];
+            switch (nm_left) {
+                case "S":
+                    if(nn_left == "S"){
+                        switch (nm_right) {
+                            case "J":
+                                if(nn_right == "J"){
+                                    console.log("same");
+                                }else if(nn_right == "B"){
+                                    console.log("right");
+                                }
+                                break;
+                            case "B":
+                                if(nn_right == "B"){
+                                    console.log("same");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "J"){
+                        switch (nm_right) {
+                            case "J":
+                                if(nn_right == "S"){
+                                    console.log("left");
+                                }else if(nn_right == "B"){
+                                    console.log("same");
+                                }
+                                break;
+                            case "B":
+                                if(nn_right == "S"){
+                                    console.log("same");
+                                }else if(nn_right == "B"){
+                                    console.log("left");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "B"){
+                        switch (nm_right) {
+                            case "B":
+                                if(nn_right == "S"){
+                                    console.log("right");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+
+                case "J":
+                    if(nn_left == "S"){
+                        switch (nm_right) {
+                            case "S":
+                                if(nn_right == "J"){
+                                    console.log("right");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "J"){
+                        switch (nm_right) {
+                            case "S":
+                                if(nn_right == "S"){
+                                    console.log("same");
+                                }
+                                break;
+                            case "B":
+                                if(nn_right == "B"){
+                                    console.log("same");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "B"){
+                        switch (nm_right) {
+                            case "S":
+                                if(nn_right == "S"){
+                                    console.log("left");
+                                }else if(nn_right == "J"){
+                                    console.log("same");
+                                }
+                                break;
+                            case "B":
+                                if(nn_right == "S"){
+                                    console.log("same");
+                                }else if(nn_right == "J"){
+                                    console.log("left");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+
+                case "B":
+                    if(nn_left == "S"){
+                        switch (nm_right) {
+                            case "S":
+                                if(nn_right == "J"){
+                                    console.log("same");
+                                }else if(nn_right == "B"){
+                                    console.log("left");
+                                }
+                                break;
+                            case "J":
+                                if(nn_right == "J"){
+                                    console.log("left");
+                                }else if(nn_right == "B"){
+                                    console.log("same");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "J"){
+                        switch (nm_right) {
+                            case "J":
+                                if(nn_right == "B"){
+                                    console.log("right");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }else if(nn_left == "B"){
+                        switch (nm_right) {
+                            case "S":
+                                if(nn_right == "S"){
+                                    console.log("same");
+                                }else if(nn_right == "J"){
+                                    console.log("right");
+                                }
+                                break;
+                            case "J":
+                                if(nn_right == "J"){
+                                    console.log("same");
+                                }
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+</script>
+
+</body>
+</html>
